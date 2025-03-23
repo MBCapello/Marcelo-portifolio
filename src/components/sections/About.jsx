@@ -130,8 +130,8 @@ const About = () => {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={images[currentImageIndex]}
-                      alt="Avatar"
+                      src={`/Marcelo-portifolio${images[currentImageIndex]}`}
+                      alt="Imagem do portfólio"
                       width={600}
                       height={600}
                       className="transition-all duration-500 ease-in-out"
