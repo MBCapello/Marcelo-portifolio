@@ -8,7 +8,6 @@ import {
   PhoneCall,
   ShieldCheck,
 } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -125,7 +124,7 @@ const About = () => {
                     transition={{ duration: 1 }}
                     className="absolute inset-0"
                   >
-                    <Image
+                    <img
                       src={images[currentImageIndex]}
                       alt="Avatar"
                       width={600}
