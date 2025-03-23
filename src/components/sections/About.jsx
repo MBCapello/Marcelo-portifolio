@@ -126,7 +126,7 @@ const About = () => {
                     className="absolute inset-0"
                   >
                     <Image
-                      src={`/Marcelo-portifolio${images[currentImageIndex]}`}
+                      src={images[currentImageIndex]}
                       alt="Imagem do portfólio"
                       width={600}
                       height={600}
