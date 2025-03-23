@@ -15,7 +15,12 @@ const About = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = ['/avatar1.jpg', '/avatar2.jpg', '/avatar3.jpg']; // Lista de imagens
+  const images = [
+    '/Marcelo-portifolio/avatar1.jpg',
+    '/Marcelo-portifolio/avatar2.jpg',
+    '/Marcelo-portifolio/avatar3.jpg',
+  ];
+  // Lista de imagens
 
   useEffect(() => {
     const interval = setInterval(() => {
