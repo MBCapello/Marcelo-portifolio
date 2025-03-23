@@ -1,4 +1,4 @@
 export default {
-  basePath: '/portifolio-marcelo-capello', // Nome do seu repositório no GitHub
-  assetPrefix: '/portifolio-marcelo-capello',
+  basePath: '/Marcelo-portifolio',
+  assetPrefix: '/Marcelo-portifolio',
 };
