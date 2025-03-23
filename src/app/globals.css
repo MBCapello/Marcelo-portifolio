@@ -1,0 +1,244 @@
+/* Tailwind directives */
+@import 'tailwindcss';
+@tailwind utilities;
+:root {
+  /* Envolva os valores em hsl() - mudança importante no v4 */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222.2 84% 4.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222.2 84% 4.9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222.2 84% 4.9%);
+  --primary: hsl(240 5% 40%); /* Cinza como cor primária */
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --accent: hsl(240 4.8% 95.9%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(240 5% 40%);
+
+  /* Variáveis para gráficos e visualizações */
+  --chart-1: hsl(221.2 83.2% 53.3%);
+  --chart-2: hsl(226.4 70.7% 40.9%);
+  --chart-3: hsl(221.4 70% 55.3%);
+  --chart-4: hsl(210 40% 98%);
+  --chart-5: hsl(228.1 62.5% 64.1%);
+
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(222.2 84% 4.9%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(222.2 84% 4.9%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(222.2 84% 4.9%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(240 5% 65%); /* Cinza mais claro para dark mode */
+  --primary-foreground: hsl(222.2 47.4% 11.2%);
+  --secondary: hsl(217.2 32.6% 17.5%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(217.2 32.6% 17.5%);
+  --muted-foreground: hsl(215 20.2% 65.1%);
+  --accent: hsl(217.2 32.6% 17.5%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(217.2 32.6% 17.5%);
+  --input: hsl(217.2 32.6% 17.5%);
+  --ring: hsl(212.7 26.8% 83.9%);
+}
+
+/* NOVA FUNCIONALIDADE DO TAILWIND v4: @theme inline */
+/* Esta diretiva permite acessar variáveis CSS diretamente com classes Tailwind */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Configurações base */
+@layer base {
+  * {
+    @apply border-border selection:bg-primary/10 selection:text-primary;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+  /* Nova funcionalidade do Tailwind v4: text-balance e text-pretty */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Utilitários personalizados */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/20 dark:border-white/10 shadow-sm;
+  }
+
+  .section {
+    @apply py-24 px-6 md:px-12 max-w-7xl mx-auto;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 md:px-12;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      to right,
+      hsl(0, 0%, 20%),
+      hsl(0, 0%, 60%),
+      hsl(0, 0%, 80%)
+    );
+  }
+
+  .dark .text-gradient {
+    background-image: linear-gradient(
+      to right,
+      hsl(0, 0%, 90%),
+      hsl(0, 0%, 60%),
+      hsl(0, 0%, 30%)
+    );
+  }
+
+  .typing-text {
+    @apply overflow-hidden whitespace-nowrap;
+  }
+
+  .skill-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105;
+  }
+
+  .tech-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:-translate-y-1;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  /* Efeito Neo Glow para elementos */
+  .neo-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .neo-glow::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 blur-sm -z-10 transition-all duration-300;
+    background: radial-gradient(
+      circle,
+      var(--glow-color, theme('colors.primary.DEFAULT')) 0%,
+      transparent 70%
+    );
+  }
+
+  .neo-glow:hover::after {
+    opacity: 1; /* O glow aparece somente durante o hover */
+  }
+}
+
+/* Animações personalizadas - agora compatíveis com Tailwind v4 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ring-ring {
+  0%,
+  100% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-ring {
+  animation: ring-ring 0.4s ease-in-out infinite;
+}
