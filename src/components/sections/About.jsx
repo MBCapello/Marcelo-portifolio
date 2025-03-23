@@ -8,6 +8,7 @@ import {
   PhoneCall,
   ShieldCheck,
 } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -15,12 +16,7 @@ const About = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = [
-    '/Marcelo-portifolio/avatar1.jpg',
-    '/Marcelo-portifolio/avatar2.jpg',
-    '/Marcelo-portifolio/avatar3.jpg',
-  ];
-  // Lista de imagens
+  const images = ['/avatar1.jpg', '/avatar2.jpg', '/avatar3.jpg']; // Lista de imagens
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -129,7 +125,7 @@ const About = () => {
                     transition={{ duration: 1 }}
                     className="absolute inset-0"
                   >
-                    <img
+                    <Image
                       src={images[currentImageIndex]}
                       alt="Avatar"
                       width={600}
