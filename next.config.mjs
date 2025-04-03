@@ -1,4 +1,8 @@
-export default {
-  basePath: '/Marcelo-portifolio',
-  assetPrefix: '/Marcelo-portifolio',
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
+
+export default nextConfig;
